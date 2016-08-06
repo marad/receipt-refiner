@@ -1,0 +1,4 @@
+
+* Purpose
+
+To refine receipt data automatically read by receipt-reader. Duh!

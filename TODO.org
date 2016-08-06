@@ -1,0 +1,4 @@
+
+* Normalizacja
+- zamienic wszystkie znaki na male
+- usunac znaki specjalne [.,/-%] w nazwach
