@@ -1,4 +1,44 @@
 
 * Purpose
 
-To refine receipt data automatically read by receipt-reader. Duh!
+To refine receipt data automatically read from receipt scan by [[https://github.com/marad/receipt-reader][receipt-reader]].
+
+OCR is not a simple task and there's always room for errors. This tool let's
+you fix those errors.
+
+* How does it work?
+
+This is an interactive command line tool. It's started with one argument which
+is the data file created by receipt-reader. Then you've got prompt that lets
+you do following tasks:
+
+- print the list
+- calculate total sum - to cross-check with original receipt
+- validate amounts - this checks whether amount * item-price = price for all entries
+- refine all entries - go through each entry one by one and fix any errors
+- refine single entry - choose one entry to fix
+- delete single entry
+- save the list back to original file
+
+** Building
+
+To build this project the only thing you will need is working [[http://boot-clj.com/][boot]] environment.
+If you've got this just run:
+
+~boot build~
+
+** Running
+
+The above will create a file /target/project.jar/ that you can run:
+
+~java -jar project.jar <receipt-data-file>~
+
+The data file is the one created by [[tata ][receipt-reader]].
+
+* What could be better?
+
+- missing tests
+- the code is awfull
+
+But on the bright side - it works amazingly good, and it only took
+few hours to make ;)
