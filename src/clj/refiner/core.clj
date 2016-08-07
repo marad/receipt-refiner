@@ -45,9 +45,10 @@
     (reset! data list)))
 
 (defn refine-single-entry [list]
-  (let [index (ch/choose-entry list)]
+  (let [v (into [] list)
+        index (ch/choose-entry list)]
     (reset! data
-            (update-in list [index] refine-entry))))
+            (update v index refine-entry))))
 
 (defn save-data [out-path data]
   (spit out-path (with-out-str (pr data))))
